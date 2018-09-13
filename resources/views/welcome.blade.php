@@ -1,4 +1,34 @@
-<!doctype html>
+@extends('layouts.app')
+@section('title', 'Bienvenido')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+                @if (session('status'))
+                    <div class="card green darken-1">
+                        <div class="card-content white-text">
+                            {{ session('status') }}
+                        </div>
+                    </div>
+                @endif
+                <div class="card red lighten-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">Dashboard</span>
+                        You are logged in!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+
+{{--<!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -93,4 +123,4 @@
             </div>
         </div>
     </body>
-</html>
+</html>--}}
