@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -253,6 +254,7 @@ class CountriesTableSeeder extends Seeder
         'Zambia',
         'Zimbabue'
     ];
+
     /**
      * Run the database seeds.
      *
@@ -266,7 +268,9 @@ class CountriesTableSeeder extends Seeder
         // Populate table
         foreach ($this->countries as $country) {
             DB::table('countries')->insert([
-                'name' => $country
+                'name' => $country,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]);
         }
     }
