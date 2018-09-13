@@ -9,6 +9,7 @@ class StatesTableSeeder extends Seeder
 
     private $states = [
         'Buenos Aires',
+        'Capital Federal',
         'Catamarca',
         'Chaco',
         'Chubut',
