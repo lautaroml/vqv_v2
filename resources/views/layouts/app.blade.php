@@ -52,7 +52,7 @@
                             </li>
                         @else
                             <!-- Dropdown Trigger -->
-                            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> {{ Auth::user()->first_name }} <i class="material-icons right">arrow_drop_down</i></a></li>
                         @endguest
                     </ul>
                 </div>
