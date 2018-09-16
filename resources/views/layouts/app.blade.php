@@ -21,8 +21,12 @@
 </head>
 <body>
     <div id="app">
+        {{--TopMenu--}}
         {{--Dropdown structure --}}
         <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">three</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
             <li>
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
@@ -34,21 +38,19 @@
                     @csrf
                 </form>
             </li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
         </ul>
         <nav>
             <div class="nav-wrapper cyan darken-2">
                 <div class="container">
                     <a href="/" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login', ['i' => 'algo']) }}">{{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register', ['i' => 'algo']) }}">{{ __('Register') }}</a>
                             </li>
                         @else
                             <!-- Dropdown Trigger -->
@@ -58,6 +60,39 @@
                 </div>
             </div>
         </nav>
+
+
+        {{--Sidenav--}}
+        {{--Dropdown structure --}}
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">three</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li>
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();"
+                >
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login', ['i' => 'algo']) }}">{{ __('Login') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register', ['i' => 'algo']) }}">{{ __('Register') }}</a>
+                </li>
+            @else
+            <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"> {{ Auth::user()->first_name }} <i class="material-icons right">arrow_drop_down</i></a></li>
+            @endguest
+        </ul>
 
         <main class="py-4">
             @yield('content')
@@ -70,6 +105,7 @@
         $(document).ready(function(){
             /* Init Materialize menu dropdown*/
             $(".dropdown-trigger").dropdown();
+            $('.sidenav').sidenav();
         });
     </script>
 

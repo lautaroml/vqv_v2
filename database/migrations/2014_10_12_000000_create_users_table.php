@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->unsignedInteger('country_id');
             $table->unsignedInteger('state_id');
-            //$table->unsignedInteger('city_id');
             $table->string('elenco');
             $table->string('other_state')->nullable();
 
