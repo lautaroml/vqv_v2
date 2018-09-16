@@ -22,7 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
 
-Route::get('/inscription', 'InscriptionController@index')->name('inscription');
+
+Route::resource('inscriptions', 'InscriptionController');
+
 
 Route::get('dashboard', function(){
    return view('dashboard');

@@ -25,4 +25,24 @@ class InscriptionController extends Controller
     {
         return view('inscription.index');
     }
+
+    public function edit($id)
+    {
+        dd(1, $$id);
+    }
+    
+    public function update(Request $request)
+    {
+        dd(1, $request);
+    }
+
+    public function create()
+    {
+        return view('admin.inscriptions.create');
+    }
+    
+    public function store(Request $request)
+    {
+        dd(1, $request);
+    }
 }

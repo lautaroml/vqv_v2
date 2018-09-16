@@ -23,7 +23,7 @@
                             <li><a class="btn-floating red tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">insert_chart</i></a></li>
                             <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Configuración"><i class="material-icons">settings</i></a></li>
                             <li><a class="btn-floating green tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">publish</i></a></li>
-                            <li><a class="btn-floating blue tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">attach_file</i></a></li>
+                            <li><a href="{{ route('inscriptions.create') }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Nueva inscripción"><i class="material-icons">playlist_add</i></a></li>
                         </ul>
                     </div>
 

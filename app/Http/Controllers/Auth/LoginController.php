@@ -36,7 +36,7 @@ class LoginController extends Controller
     {
         $inscription = \request('i');
         $inscription2 = \request('inscription');
-        $this->redirectTo = route('inscription', ['i' => $inscription2]);
+        $this->redirectTo = route('inscriptions.index');
         $this->middleware('guest')->except('logout');
     }
 }
