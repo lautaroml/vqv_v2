@@ -18,6 +18,11 @@ class CreateInscriptionsTable extends Migration
             $table->char('title', 255);
             $table->text('description');
             $table->char('slug', 255);
+            $table->integer('min_age');
+            $table->integer('max_age');
+            $table->boolean('status');
+            $table->dateTimeTz('available_from');
+            $table->dateTimeTz('available_to');
             $table->timestamps();
         });
     }
