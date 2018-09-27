@@ -23,8 +23,8 @@ class CreateInscriptionsTable extends Migration
             $table->integer('max_subscriptions');
             $table->boolean('status')->default(0);
             $table->char('disponibility', 255);
-            $table->dateTimeTz('available_from')->nullable();
-            $table->dateTimeTz('available_to')->nullable();
+            //$table->dateTimeTz('available_from')->nullable();
+            //$table->dateTimeTz('available_to')->nullable();
             $table->timestamps();
         });
     }

@@ -37,8 +37,8 @@ class InscriptionsTableSeeder extends Seeder
                 'max_subscriptions' => mt_rand(2,5),
                 'status' => mt_rand(0,1),
                 'disponibility' => $this->disponibility_array[mt_rand(0,3)],
-                'available_from' => '17/09/2018',
-                'available_to' => '17/10/2018',
+                //'available_from' => '17/09/2018',
+                //'available_to' => '17/10/2018',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]);
