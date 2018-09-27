@@ -10,4 +10,9 @@ class Inscription extends Model
     {
         return $this->hasMany('App\Taller', 'inscription_id');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'taller_user')->withTimestamps();;
+    }
 }

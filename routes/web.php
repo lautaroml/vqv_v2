@@ -24,6 +24,7 @@ Route::resource('users', 'UserController');
 
 Route::get('inscription/{inscription_slug}', 'UserInscriptionController@index')->name('user.inscriptions');;
 Route::get('inscription/subscribe/{taller}', 'UserInscriptionController@subscribe')->name('user.inscriptions.subscribe');
+Route::get('inscription/destroy/{taller}', 'UserInscriptionController@destroy')->name('user.inscriptions.destroy');
 
 Route::get('inscriptions/{inscription}/toggle', 'InscriptionController@toggleInscription')->name('inscriptions.toggle');
 Route::resource('inscriptions', 'InscriptionController');

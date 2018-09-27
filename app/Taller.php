@@ -13,6 +13,16 @@ class Taller extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->withTimestamps();;
+    }
+
+    public function isFull()
+    {
+        $inscriptos = count($this->users);
+
+        if ($inscriptos == $this->cupo) {
+            return true;
+        }
+        return false;
     }
 }

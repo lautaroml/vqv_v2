@@ -15,6 +15,7 @@ class CreateTallerUserTable extends Migration
     {
         Schema::create('taller_user', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('inscription_id');
             $table->unsignedInteger('taller_id');
             $table->unsignedInteger('user_id');
             $table->timestamps();

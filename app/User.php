@@ -37,4 +37,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function tallers()
+    {
+        return $this->belongsToMany('App\Taller')->withTimestamps();
+    }
+
+    public function inscriptions()
+    {
+        return $this->belongsToMany('App\Inscription', 'taller_user')->withPivot('taller_id');
+    }
+
+    public function has($id)
+    {
+        return $this->tallers()->find($id);
+    }
 }
