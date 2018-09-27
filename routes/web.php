@@ -22,8 +22,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
 
+Route::get('inscription/{inscription_slug}', 'UserInscriptionController@index');
+Route::get('inscription/subscribe/{taller}', 'UserInscriptionController@subscribe')->name('subscribe');
 
+Route::get('inscriptions/{inscription}/toggle', 'InscriptionController@toggleInscription')->name('inscriptions.toggle');
 Route::resource('inscriptions', 'InscriptionController');
+
+Route::resource('tallers', 'TallerController');
+
+
+
 
 
 Route::get('dashboard', function(){

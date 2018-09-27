@@ -17,11 +17,16 @@
                     <span class="card-title">Inscripciones</span>
                     <hr>
                     <div class="row">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias autem beatae deleniti dignissimos dolores eaque id maiores molestiae optio perspiciatis possimus quae quaerat quas quia quidem repellendus tenetur, ut vitae.</p>
+                        @if(count($inscriptions))
+                            <div class="collection">
+                                @foreach($inscriptions as $inscription)
+                                    <a href="#!" class="collection-item">{{ $inscription->title }}</a>
+                                @endforeach
+                            </div>
+                        @else
+                            <p>No hay inscripciones abiertas por el momento.</p>
+                        @endif
                     </div>
-                </div>
-                <div class="card-action">
-
                 </div>
             </div>
         </div>

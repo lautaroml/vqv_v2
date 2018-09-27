@@ -15,14 +15,15 @@ class CreateInscriptionsTable extends Migration
     {
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('title', 255);
-            $table->text('description');
-            $table->char('slug', 255);
-            $table->integer('min_age');
-            $table->integer('max_age');
-            $table->boolean('status');
-            $table->dateTimeTz('available_from');
-            $table->dateTimeTz('available_to');
+            $table->char('title', 255)->unique();
+            $table->char('slug', 255)->unique();
+            $table->text('description')->nullable();
+            $table->integer('min_age')->default(0);
+            $table->integer('max_age')->default(100);
+            $table->boolean('status')->default(0);
+            $table->char('disponibility', 255);
+            $table->dateTimeTz('available_from')->nullable();
+            $table->dateTimeTz('available_to')->nullable();
             $table->timestamps();
         });
     }

@@ -17,10 +17,14 @@ class CreateTallersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('professor');
-            $table->integer('day_one');
+            /*$table->integer('day_one');
             $table->integer('day_two');
-            $table->integer('day_three');
+            $table->integer('day_three');*/
             $table->integer('cupo');
+
+            $table->char('disponibility', 250);
+
+            $table->unsignedInteger('inscription_id');
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@
 
     {{--User defined scripts for the header--}}
     @yield('css')
+    @routes
 </head>
 <body>
     <div id="app">

@@ -13,10 +13,10 @@
     <div class="container">
         <div class="row">
             <div class="card">
-                {!! Form::model($inscription, ['route' => ['inscriptions.update', $inscription->id], 'method' => 'put']) !!}
+                {!! Form::open(['route' => ['tallers.store', 'inscription_id' => $inscription->id], 'method' => 'post']) !!}
                 <div class="card-content">
                     <div class="row">
-                        @include('admin.inscriptions.shares.form')
+                        @include('admin.tallers.shares.form')
                     </div>
                 </div>
                 <div class="card-action">
@@ -31,5 +31,5 @@
 @endsection
 
 @section('js')
-    @include('admin.inscriptions.shares.js')
+    @include('admin.tallers.shares.js')
 @endsection

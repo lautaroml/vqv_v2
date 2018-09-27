@@ -48,49 +48,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col s12 m6">
-                            <div class="card blue-grey darken-1">
-                                <div class="card-content white-text">
-                                    <span class="card-title">
-                                        <a href="#!"><i class="material-icons left">edit</i></a>
-                                        Inscripción 2018
-                                    </span>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">people</i>257</a>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">format_list_bulleted</i>15</a>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>button</a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6">
-                            <div class="card blue-grey darken-1">
-                                <div class="card-content white-text">
-                                    <span class="card-title">
-                                        <a href="#!"><i class="material-icons left">edit</i></a>
-                                        Inscripción 2017
-                                    </span>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">people</i>257</a>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">format_list_bulleted</i>15</a>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>button</a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col s12 m6">
-                            <div class="card blue-grey darken-1">
-                                <div class="card-content white-text">
-                                    <span class="card-title">
-                                        <a href="#!"><i class="material-icons left">edit</i></a>
-                                        Inscripción 2016
-                                    </span>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">people</i>257</a>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">format_list_bulleted</i>15</a>
-                                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>button</a>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>

@@ -52,7 +52,6 @@ class StatesTableSeeder extends Seeder
                 'name' => $state,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-
             ]);
         }
     }
