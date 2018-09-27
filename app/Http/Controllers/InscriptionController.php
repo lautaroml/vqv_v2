@@ -42,6 +42,7 @@ class InscriptionController extends Controller
         $inscription->description = $request->get('description');
         $inscription->min_age = $request->get('min_age');
         $inscription->max_age = $request->get('max_age');
+        $inscription->max_subscriptions = $request->get('max_subscriptions');
         //$inscription->available_from = $request->get('available_from');
         //$inscription->available_to = $request->get('available_to');
         $inscription->disponibility = $request->get('disponibility');
@@ -71,6 +72,7 @@ class InscriptionController extends Controller
         $inscription->description = $request->get('description');
         $inscription->min_age = $request->get('min_age');
         $inscription->max_age = $request->get('max_age');
+        $inscription->max_subscriptions = $request->get('max_subscriptions');
         //$inscription->available_from = $request->get('available_from');
         //$inscription->available_to = $request->get('available_to');
         $inscription->disponibility = $request->get('disponibility');

@@ -26,12 +26,8 @@
 </div>
 <div class="row">
     <div class="col s6">
-        <label>Habilitado desde:</label>
-        {!! Form::text('available_from', null, ['class' => 'datepicker']) !!}
-    </div>
-    <div class="col s6">
-        <label>Habilitado hasta:</label>
-        {!! Form::text('available_to', null, ['class' => 'datepicker']) !!}
+        <label>Maximo de inscripciones por alumno:</label>
+        {!! Form::number('max_subscriptions', null) !!}
     </div>
 </div>
 <div class="row">
