@@ -14,13 +14,22 @@
         <div class="row">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">Inscripciones</span>
+                    <span class="card-title">
+                        Inscripciones
+                        @auth()
+                            @if(auth()->user()->type === '1')
+                                <a class="waves-effect waves-light btn-small" href="{{ route('inscriptions.index') }}"><i class="material-icons center">edit</i></a>
+                            @endif
+                        @endauth
+
+                    </span>
+
                     <hr>
                     <div class="row">
                         @if(count($inscriptions))
                             <div class="collection">
                                 @foreach($inscriptions as $inscription)
-                                    <a href="#!" class="collection-item">{{ $inscription->title }}</a>
+                                    <a href="{{ route('user.inscriptions', [$inscription->slug]) }}" class="collection-item">{{ $inscription->title }}</a>
                                 @endforeach
                             </div>
                         @else

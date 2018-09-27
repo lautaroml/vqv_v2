@@ -20,9 +20,8 @@ class UserInscriptionController extends Controller
     }
 
     public function subscribe(Taller $taller)
-    {dd($taller->users);
-        // TODO: setear el maximo de inscripciones permitidas por alumno, tomando el dato desde la DB.
-        if (auth()->user()->tallers->count() >= 2) {
+    {
+        if (auth()->user()->tallers->count() >= $taller->inscription->max_subscriptions) {
             return redirect()->back()->with([
                 'message_error' => 'No podes inscribirte a más de dos Talleres'
             ]);

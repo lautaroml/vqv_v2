@@ -34,6 +34,7 @@ class InscriptionsTableSeeder extends Seeder
                 'description' => $faker->text,
                 'min_age' => mt_rand(15,20),
                 'max_age' => mt_rand(20,30),
+                'max_subscriptions' => mt_rand(2,5),
                 'status' => mt_rand(0,1),
                 'disponibility' => $this->disponibility_array[mt_rand(0,3)],
                 'available_from' => '17/09/2018',

@@ -43,7 +43,7 @@
         <nav>
             <div class="nav-wrapper cyan darken-2">
                 <div class="container">
-                    <a href="/" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
+                    <a href="/home" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         @guest

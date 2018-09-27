@@ -20,6 +20,7 @@ class CreateInscriptionsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('min_age')->default(0);
             $table->integer('max_age')->default(100);
+            $table->integer('max_subscriptions');
             $table->boolean('status')->default(0);
             $table->char('disponibility', 255);
             $table->dateTimeTz('available_from')->nullable();

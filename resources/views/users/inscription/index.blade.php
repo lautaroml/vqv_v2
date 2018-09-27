@@ -40,7 +40,7 @@
                                     <td>{{ $taller->cupo }}</td>
                                     <td>{{ $taller->disponibility }}</td>
                                     <td>
-                                        <a class="waves-effect waves-light btn-small" href="{{ route('subscribe', $taller->id) }}"><i class="material-icons right">edit</i>Inscribirme</a>
+                                        <a class="waves-effect waves-light btn-small" href="{{ route('user.inscriptions.subscribe', $taller->id) }}"><i class="material-icons right">edit</i>Inscribirme</a>
                                     </td>
                                 </tr>
                             @endforeach
