@@ -17,7 +17,7 @@
                     <span class="card-title">
                         Inscripciones
                         @auth()
-                            @if(auth()->user()->type === '1')
+                            @if(auth()->user()->type === 1)
                                 <a class="waves-effect waves-light btn-small" href="{{ route('inscriptions.index') }}"><i class="material-icons center">edit</i></a>
                             @endif
                         @endauth
