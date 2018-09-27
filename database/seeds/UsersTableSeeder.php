@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'first_name' =>'Lautaro',
-            'last_name' =>'Lautaro',
+            'last_name' =>'Lopez',
             'type' => 1,
             'document' =>'12345678',
             'age' =>'32',
