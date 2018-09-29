@@ -35,7 +35,7 @@
             {{ route('inscriptions.destroy', ['id' => $inscription->id]) }}
         @endslot
         @slot('message')
-            <p>¿Esta seguro que desea eliminar el Taller: {{ $inscription->title }}?</p>
+            <p>¿Esta seguro que desea eliminar la Inscripción: {{ $inscription->title }}?</p>
         @endslot
     @endcomponent
 @endsection
