@@ -26,6 +26,10 @@ class UserInscriptionController extends Controller
             return view('users.inscription.index', compact('inscription'));
         }
 
+        if (auth()->user()->type === 1) {
+            return view('users.inscription.index', compact('inscription'));
+        }
+
         return redirect()->back()->with([
             'message_error' => 'No contas con la edad necesaria para anotarte a esta inscripción!'
         ]);
@@ -49,7 +53,7 @@ class UserInscriptionController extends Controller
                 'message_error' => 'El taller: ' . $taller->name . ' se superpone con otro Taller que ya estas inscripto'
             ]);
         }
-        
+
 
         if ($taller->users->count() < $taller->cupo) {
             $user = auth()->user();
