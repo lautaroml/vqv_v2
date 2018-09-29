@@ -46,6 +46,7 @@ class MailResetPasswordNotification extends Notification
         $link = url( "password/reset/?token=" . $this->token );
 
         return (new MailMessage)
+            ->from('vqvinscripciones@gmail.com', 'Vamos que venimos')
             ->subject('Reseteo de contraseña')
             ->line('Usted está recibiendo este correo electrónico porque recibimos una solicitud de restablecimiento de contraseña para su cuenta.')
             ->action(Lang::getFromJson('Resetear contraseña'), url(config('app.url').route('password.reset', $this->token, false)))
