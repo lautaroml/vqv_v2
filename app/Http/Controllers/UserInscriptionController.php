@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Inscription;
 use App\Taller;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class UserInscriptionController extends Controller
 {
@@ -63,7 +64,14 @@ class UserInscriptionController extends Controller
                     ]
             ]);
 
-            //SendEmail::dispatch($user->id, $taller->id);
+            Mail::send('inscription', [
+                'taller' => $taller->name,
+                'user' => $user
+            ], function ($message)  use ($taller, $user) {
+                $message->subject('Comprobante de inscripción al taller [' . $taller->name . ']');
+                $message->from('vqvinscripciones@gmail.com', 'Vamos que venimos');
+                $message->to($user->email);
+            });
 
             return redirect()->back()->with([
                 'message_success' => 'Te llegará un e-mail con la confirmación de la inscripción. (Si no lo ves en unos minutos, fijate que no este como SPAM)'
