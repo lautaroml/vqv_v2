@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ElencoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $elencos = Elenco::all();

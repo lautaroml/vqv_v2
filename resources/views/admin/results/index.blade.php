@@ -17,7 +17,7 @@
             <div class="card">
 
                 <div class="card-content">
-                    
+
                     <span class="card-title">{{ $inscription->title }}</span>
                     <hr>
                     <div class="row">
