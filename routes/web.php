@@ -39,3 +39,8 @@ Route::resource('elencos', 'ElencoController');
 Route::get('dashboard', function(){
    return view('dashboard');
 });
+
+
+Route::resource('results', 'ResultController');
+Route::get('results/download/{taller}', 'ResultController@download')->name('results.download');
+

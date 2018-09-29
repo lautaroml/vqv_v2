@@ -52,7 +52,7 @@
 
                                     </div>
                                     <div class="card-action">
-                                        <a class="waves-effect waves-light btn-small"><i class="material-icons left">people</i>{{ count(array_count_values($inscription->users->pluck('id')->toArray())) }}</a>
+                                        <a class="waves-effect waves-light btn-small" href="{{ route('results.index', ['inscription_id' => $inscription->id]) }}"><i class="material-icons left">people</i>{{ count(array_count_values($inscription->users->pluck('id')->toArray())) }}</a>
                                         <a class="waves-effect waves-light btn-small" href="{{ route('tallers.index', ['inscription_id' => $inscription->id]) }}"><i class="material-icons left">format_list_bulleted</i>{{ $inscription->tallers->count() }}</a>
                                         <a class="waves-effect waves-light btn-small link" href="inscription/{{$inscription->slug}}"><i class="material-icons center">link</i></a>
                                         <a class="waves-effect waves-light btn-small" href="inscription/{{$inscription->slug}}" target="_blank"><i class="material-icons center">tab</i></a>
