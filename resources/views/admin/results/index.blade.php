@@ -17,20 +17,7 @@
             <div class="card">
 
                 <div class="card-content">
-
-
-                    <div class="fixed-action-btn">
-                        <a class="btn-floating btn-large red">
-                            <i class="large material-icons">mode_edit</i>
-                        </a>
-                        <ul>
-                            <li><a class="btn-floating red tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">insert_chart</i></a></li>
-                            <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Configuración"><i class="material-icons">settings</i></a></li>
-                            <li><a class="btn-floating green tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">publish</i></a></li>
-                            <li><a href="{{ route('tallers.create', ['inscription_id' => $inscription->id]) }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Nuevo Taller"><i class="material-icons">playlist_add</i></a></li>
-                        </ul>
-                    </div>
-
+                    
                     <span class="card-title">{{ $inscription->title }}</span>
                     <hr>
                     <div class="row">
