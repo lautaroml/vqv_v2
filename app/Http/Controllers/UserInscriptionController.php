@@ -46,14 +46,14 @@ class UserInscriptionController extends Controller
             ]);
         }
 
-
         $disponibility_taken = auth()->user()->tallers->where('inscription_id', $taller->inscription->id)->pluck('disponibility')->toArray();
-        if (in_array($taller->disponibility, $disponibility_taken)) {
-            return redirect()->back()->with([
-                'message_error' => 'El taller: ' . $taller->name . ' se superpone con otro Taller que ya estas inscripto'
-            ]);
+        foreach ($disponibility_taken as $value) {
+                if (count(array_intersect(explode(',', $taller->disponibility), explode(',', $value)))) {
+                    return redirect()->back()->with([
+                        'message_error' => 'El taller: ' . $taller->name . ' se superpone con otro Taller que ya estas inscripto'
+                    ]);
+                }
         }
-
 
         if ($taller->users->count() < $taller->cupo) {
             $user = auth()->user();
