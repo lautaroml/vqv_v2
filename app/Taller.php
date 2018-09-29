@@ -25,4 +25,9 @@ class Taller extends Model
         }
         return false;
     }
+    
+    public function inscriptos()
+    {
+        return count($this->users());
+    }
 }

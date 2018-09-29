@@ -26,7 +26,6 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Profesor</th>
-                                <th>Cupo</th>
                                 <th>Disponibilidad</th>
                                 <th width="250px;">Herramientas</th>
                             </tr>
@@ -36,7 +35,6 @@
                                 <tr>
                                     <td>{{ $taller->name }}</td>
                                     <td>{{ $taller->professor }}</td>
-                                    <td>{{ $taller->cupo }}</td>
                                     <td>{{ $taller->disponibility }}</td>
                                     <td>
                                         @if(auth()->user()->has($taller->id))

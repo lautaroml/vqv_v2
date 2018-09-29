@@ -54,7 +54,7 @@
                                 <tr>
                                     <td>{{ $taller->name }}</td>
                                     <td>{{ $taller->professor }}</td>
-                                    <td>{{ $taller->cupo }}</td>
+                                    <td>{{ count($taller->users) }} / {{ $taller->cupo }}</td>
                                     <td>{{ $taller->disponibility }}</td>
                                     <td>
                                         <a class="waves-effect waves-light btn-small" href="{{ route('tallers.edit', $taller->id) }}"><i class="material-icons right">edit</i>Editar</a>
