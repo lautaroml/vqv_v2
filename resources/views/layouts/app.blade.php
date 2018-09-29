@@ -25,15 +25,13 @@
         {{--TopMenu--}}
         {{--Dropdown structure --}}
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">three</a></li>
-            <li><a href="#!">two</a></li>
             <li class="divider"></li>
             <li>
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();"
                 >
-                    {{ __('Logout') }}
+                    Salir
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -48,10 +46,10 @@
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login', ['i' => 'algo']) }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register', ['i' => 'algo']) }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                             </li>
                         @else
                             <!-- Dropdown Trigger -->
@@ -66,15 +64,13 @@
         {{--Sidenav--}}
         {{--Dropdown structure --}}
         <ul id="dropdown2" class="dropdown-content">
-            <li><a href="#!">three</a></li>
-            <li><a href="#!">two</a></li>
             <li class="divider"></li>
             <li>
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();"
                 >
-                    {{ __('Logout') }}
+                    Salir
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -87,7 +83,7 @@
                     <a class="nav-link" href="{{ route('login', ['i' => 'algo']) }}">{{ __('Login') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register', ['i' => 'algo']) }}">{{ __('Register') }}</a>
+                    <a class="nav-link" href="{{ route('register', ['i' => 'algo']) }}">Registrarse</a>
                 </li>
             @else
             <!-- Dropdown Trigger -->
