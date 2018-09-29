@@ -107,6 +107,7 @@
             /* Init Materialize menu dropdown*/
             $(".dropdown-trigger").dropdown();
             $('.sidenav').sidenav();
+            $('.modal').modal();
         });
     </script>
 

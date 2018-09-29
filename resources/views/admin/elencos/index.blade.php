@@ -11,30 +11,22 @@
 
 @section('content')
     <div class="container">
-
         <div class="row">
-
             <div class="card">
-
                 <div class="card-content">
-
-
                     <div class="fixed-action-btn">
                         <a class="btn-floating btn-large red">
                             <i class="large material-icons">mode_edit</i>
                         </a>
                         <ul>
-                            <li><a class="btn-floating red tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">insert_chart</i></a></li>
-                            <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Configuración"><i class="material-icons">settings</i></a></li>
-                            <li><a class="btn-floating green tooltipped" data-position="left" data-tooltip="I am a tooltip"><i class="material-icons">publish</i></a></li>
-                            <li><a href="{{ route('tallers.create', ['inscription_id' => $inscription->id]) }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Nuevo Taller"><i class="material-icons">playlist_add</i></a></li>
+                            <li><a href="{{ route('elencos.edition.show') }}" class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Modificar el Nº de edición"><i class="material-icons">settings</i></a></li>
+                            <li><a href="{{ route('elencos.create') }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Nueva elenco"><i class="material-icons">playlist_add</i></a></li>
                         </ul>
                     </div>
-
-                    <span class="card-title">{{ $inscription->title }}</span>
+                    <span class="card-title">Elencos</span>
                     <hr>
                     <div class="row">
-                        <p>{{ $inscription->description }}</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet commodi deserunt, distinctio dolorem error et fuga harum itaque molestiae nihil nostrum qui recusandae sapiente soluta tempore tenetur vitae!</p>
                     </div>
 
                     <div class="row">
@@ -42,22 +34,16 @@
                             <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Profesor</th>
-                                <th>Cupo</th>
-                                <th>Disponibilidad</th>
                                 <th width="250px;">Herramientas</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            @foreach($inscription->tallers as $taller)
+                            @foreach($elencos as $elenco)
                                 <tr>
-                                    <td>{{ $taller->name }}</td>
-                                    <td>{{ $taller->professor }}</td>
-                                    <td>{{ $taller->cupo }}</td>
-                                    <td>{{ $taller->disponibility }}</td>
+                                    <td>{{ $elenco->name }}</td>
                                     <td>
-                                        <a class="waves-effect waves-light btn-small" href="{{ route('tallers.edit', $taller->id) }}"><i class="material-icons right">edit</i>Editar</a>
+                                        <a class="waves-effect waves-light btn-small" href="{{ route('elencos.edit', $elenco->id) }}"><i class="material-icons right">edit</i>Editar</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -84,12 +70,14 @@
 
             $('.tooltipped').tooltip();
         });
+
         @if (session('message_error'))
-            M.toast({html: '{{ session('message_error') }}', classes: 'red accent-1'});
+        M.toast({html: '{{ session('message_error') }}', classes: 'red accent-1'});
         @endif
 
         @if (session('message_success'))
-            M.toast({html: '{{ session('message_success') }}', classes: 'teal lighten-2', displayLength: 7000});
+        M.toast({html: '{{ session('message_success') }}', classes: 'teal lighten-2', displayLength: 7000});
         @endif
+
     </script>
 @endsection

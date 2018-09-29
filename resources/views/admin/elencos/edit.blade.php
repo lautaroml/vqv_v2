@@ -13,10 +13,10 @@
     <div class="container">
         <div class="row">
             <div class="card">
-                {!! Form::model($taller, ['route' => ['tallers.update', $taller->id], 'method' => 'put']) !!}
+                {!! Form::model($elenco, ['route' => ['elencos.update', $elenco->id], 'method' => 'put']) !!}
                 <div class="card-content">
                     <div class="row">
-                        @include('admin.tallers.shares.form')
+                        @include('admin.elencos.shares.form')
                     </div>
                 </div>
                 <div class="card-action">
@@ -30,18 +30,15 @@
         </div>
     </div>
 
-
     @component('components.modals.delete')
         @slot('form_action')
-            {{ route('tallers.destroy', ['id' => $taller->id]) }}
+            {{ route('elencos.destroy', ['id' => $elenco->id]) }}
         @endslot
         @slot('message')
-            <p>¿Esta seguro que desea eliminar el Taller: {{ $taller->name }}?</p>
+            <p>¿Esta seguro que desea eliminar el Elenco: {{ $elenco->name }}?</p>
         @endslot
     @endcomponent
-
 @endsection
 
 @section('js')
-    @include('admin.tallers.shares.js')
 @endsection

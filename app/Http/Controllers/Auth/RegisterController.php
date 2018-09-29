@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Country;
 use App\Elenco;
 use App\Helpers\Helpers;
+use App\Settings;
 use App\State;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -53,11 +54,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $age = Helpers::ageFromBirthdayString($data['birthday']);
+        //$age = Helpers::ageFromBirthdayString($data['birthday']);
 
         // TODO: tomar los valores de $min_age y $max_age desde la DB
-        $min_age = 25;
-        $max_age = 32;
+        /*$min_age = 25;
+        $max_age = 32;*/
 
         $validator = Validator::make($data, [
             'first_name' => 'required|string|max:255',
@@ -73,11 +74,11 @@ class RegisterController extends Controller
         ]);
 
 
-        $validator->after(function ($validator) use($age, $min_age, $max_age) {
+        /*$validator->after(function ($validator) use($age, $min_age, $max_age) {
             if (!(($min_age <= $age) && ($age <= $max_age))) {
                 $validator->errors()->add('birthday', 'No cumplís con la edad necesaria para inscribirte!');
             }
-        });
+        });*/
 
         return $validator;
     }
@@ -115,7 +116,11 @@ class RegisterController extends Controller
         $elencos = Elenco::all()->pluck('name', 'id')->toArray();
         $countries = Country::all()->pluck('name', 'id')->toArray();
         $states = State::all()->pluck('name', 'id')->toArray();
-
-        return view('auth.register', compact('countries', 'states', 'elencos'));
+        $edicion = '';
+        if ( Settings::where('key', 'edicion')->first() )
+        {
+            $edicion = Settings::where('key', 'edicion')->first()->val;
+        }
+        return view('auth.register', compact('countries', 'states', 'elencos', 'edicion'));
     }
 }

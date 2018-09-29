@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Inscription;
 use App\Taller;
+use Carbon\Carbon;
 
 class UserInscriptionController extends Controller
 {
@@ -16,7 +17,20 @@ class UserInscriptionController extends Controller
     {
         $inscription = Inscription::where('slug', $inscription_slug)->first();
 
-        return view('users.inscription.index', compact('inscription'));
+        $user_age = Carbon::parse(auth()->user()->birthday)->age;
+
+
+
+
+        if ($inscription->min_age <= $user_age && $user_age <= $inscription->max_age) {
+            return view('users.inscription.index', compact('inscription'));
+        }
+
+        return redirect()->back()->with([
+            'message_error' => 'No contas con la edad necesaria para anotarte a esta inscripción!'
+        ]);
+
+
     }
 
     public function subscribe(Taller $taller)
@@ -28,14 +42,14 @@ class UserInscriptionController extends Controller
             ]);
         }
 
-        /*if (auth()->user()->tallers->count()) {
-            $comp = $taller->compatibilities->pluck('external_taller_id')->toArray();
-            if (! in_array(auth()->user()->tallers->first()->id, $comp)) {
-                return redirect()->back()->with([
-                    'message_error' => 'El taller: ' . $taller->name . ' no es compatible con: ' . auth()->user()->tallers->first()->name
-                ]);
-            }
-        }*/
+
+        $disponibility_taken = auth()->user()->tallers->where('inscription_id', $taller->inscription->id)->pluck('disponibility')->toArray();
+        if (in_array($taller->disponibility, $disponibility_taken)) {
+            return redirect()->back()->with([
+                'message_error' => 'El taller: ' . $taller->name . ' se superpone con otro Taller que ya estas inscripto'
+            ]);
+        }
+        
 
         if ($taller->users->count() < $taller->cupo) {
             $user = auth()->user();

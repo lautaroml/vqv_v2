@@ -32,9 +32,9 @@ Route::resource('inscriptions', 'InscriptionController');
 
 Route::resource('tallers', 'TallerController');
 
-
-
-
+Route::get('elencos/edition', 'ElencoController@edition')->name('elencos.edition.show');
+Route::post('elencos/edition', 'ElencoController@editionStore')->name('elencos.edition.store');
+Route::resource('elencos', 'ElencoController');
 
 Route::get('dashboard', function(){
    return view('dashboard');

@@ -88,4 +88,13 @@ class InscriptionController extends Controller
         $inscription->save();
         return redirect()->back();
     }
+
+    public function destroy(Inscription $inscription)
+    {
+        $inscription->delete();
+
+        return redirect()->route('inscriptions.index')->with([
+            'message_success' => 'Se ha eliminado la Inscripción, correctamente!'
+        ]);
+    }
 }

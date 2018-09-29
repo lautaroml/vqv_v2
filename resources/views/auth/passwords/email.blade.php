@@ -67,18 +67,18 @@
                             </div>
                         </div>
                     @endif
-                    <span class="card-title">Reset Password</span>
+                    <span class="card-title">Resetear contraseña</span>
                     <hr>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">mail</i>
                             <input id="email" type="email" name="email" value="{{ old('email') }}" class="{{ $errors->has('email') ? 'invalid' : '' }}" required autofocus>
-                            <label for="email" data-error="{{ $errors->has('email') ? $errors->first('email'): '' }}">E-Mail Address</label>
+                            <label for="email" data-error="{{ $errors->has('email') ? $errors->first('email'): '' }}">E-Mail</label>
                         </div>
                     </div>
                 </div>
                 <div class="card-action">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Send Password Reset Link
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar link para resetear la contraseña
                         <i class="material-icons right">lock_open</i>
                     </button>
                 </div>

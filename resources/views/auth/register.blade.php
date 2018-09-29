@@ -96,6 +96,21 @@
                                 <span class="helper-text" data-error="{{ $errors->first('email') }}"></span>
                             @endif
                         </div>
+
+
+                        {{--TODO: Hacer la logica para el siguiente input--}}
+                        <div id="other_container" class="form-group{{ $errors->has('other') ? ' has-error' : '' }}" style="display: none">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">location_city</i>
+                                <input id="other" type="text" name="other" value="{{ old('other') }}" class="{{ $errors->has('other') ? 'invalid' : '' }}" >
+                                <label for="other" data-error="{{ $errors->has('other') ? $errors->first('other'): '' }}">Escriba la provincia *</label>
+                                @if ($errors->has('other'))
+                                    <span class="helper-text" data-error="{{ $errors->first('other') }}"></span>
+                                @endif
+                            </div>
+                        </div>
+
+
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
@@ -124,25 +139,14 @@
                                     @endforeach
                                 </optgroup>
                             </select>
-                            <label>¿Pertenece a un elenco que forma parte de este 9na Edición de VQV? *</label>
+                            <label>¿Pertenece a un elenco que forma parte de esta {{ $edicion }} Edición de VQV? *</label>
                             @if ($errors->has('elenco'))
                                 <span class="helper-text" data-error="{{ $errors->first('elenco') }}"></span>
                             @endif
                         </div>
                     </div>
 
-                    {{--TODO: Hacer la logica para el siguiente input--}}
-                    <div id="other_container" class="form-group{{ $errors->has('other') ? ' has-error' : '' }}" style="display: none">
-                        <label for="other" class="col-md-4 control-label">Escriba cual</label>
-                        <div class="col-md-6">
-                            <input id="other" value="{{ old('other') }}" type="text" class="form-control" name="other" value="{{ old('other') }}" >
-                            @if ($errors->has('other'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('other') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                    </div>
+
 
                 </div>
                 <div class="card-action">
@@ -161,5 +165,28 @@
         $(document).ready(function(){
             $('select').formSelect();
         });
+
+
+
+        if ($("#state").val() == '99') {
+            $("#other_container").show();
+        }
+        if ($("#other_container").is(":visible") ) {
+            $("#other").prop('required', true);
+        } else {
+            $("#other").prop('required', false);
+        }
+        $("#state").change(function(){
+            $("#other").val('');
+            if ($(this).val() == '99') {
+                $("#other_container").show();
+                $("#other").prop('required', true);
+            } else {
+                $("#other_container").hide();
+                $("#other").prop('required', false);
+            }
+        });
+
+
     </script>
 @endsection

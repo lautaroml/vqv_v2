@@ -103,6 +103,12 @@ class TallerController extends Controller
      */
     public function destroy(Taller $taller)
     {
-        //
+        $inscription_id = $taller->inscription->id;
+
+        $taller->delete();
+
+        return redirect()->route('tallers.index', ['inscription_id' => $inscription_id])->with([
+            'message_success' => 'Se ha eliminado el Taller, correctamente!'
+        ]);
     }
 }
