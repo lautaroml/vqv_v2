@@ -32,9 +32,6 @@
                     <span class="card-title">Bienvenido</span>
                     <hr>
                     <div class="row">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias autem beatae deleniti dignissimos dolores eaque id maiores molestiae optio perspiciatis possimus quae quaerat quas quia quidem repellendus tenetur, ut vitae.</p>
-                    </div>
-                    <div class="row">
                         @foreach($inscriptions as $inscription)
                             <div class="col s12 m6">
                                 <div class="card small blue-grey darken-1">

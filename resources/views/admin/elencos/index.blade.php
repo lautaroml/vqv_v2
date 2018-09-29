@@ -25,9 +25,6 @@
                     </div>
                     <span class="card-title">Elencos</span>
                     <hr>
-                    <div class="row">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet commodi deserunt, distinctio dolorem error et fuga harum itaque molestiae nihil nostrum qui recusandae sapiente soluta tempore tenetur vitae!</p>
-                    </div>
 
                     <div class="row">
                         <table class="striped highlight">
