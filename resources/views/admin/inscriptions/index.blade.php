@@ -25,6 +25,7 @@
                             <i class="large material-icons">mode_edit</i>
                         </a>
                         <ul>
+                            <li><a href="{{ route('users.index') }}" class="btn-floating green tooltipped" data-position="left" data-tooltip="Usuarios"><i class="material-icons">people</i></a></li>
                             <li><a href="{{ route('elencos.index') }}" class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Elencos"><i class="material-icons">settings</i></a></li>
                             <li><a href="{{ route('inscriptions.create') }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Nueva inscripción"><i class="material-icons">playlist_add</i></a></li>
                         </ul>
