@@ -20,22 +20,23 @@ class UserInscriptionController extends Controller
 
         $user_age = Carbon::parse(auth()->user()->birthday)->age;
 
-
-
-
-        if ($inscription->min_age <= $user_age && $user_age <= $inscription->max_age) {
+        if (auth()->user()->type === 1) {
             return view('users.inscription.index', compact('inscription'));
         }
 
-        if (auth()->user()->type === 1) {
+        if($inscription->status === 0){
+            return redirect('home')->with([
+                'message_error' => 'Está inscripción ha finalizado!'
+            ]);
+        }
+
+        if ($inscription->min_age <= $user_age && $user_age <= $inscription->max_age) {
             return view('users.inscription.index', compact('inscription'));
         }
 
         return redirect()->back()->with([
             'message_error' => 'No contas con la edad necesaria para anotarte a esta inscripción!'
         ]);
-
-
     }
 
     public function subscribe(Taller $taller)
