@@ -35,6 +35,7 @@
                         <table class="striped highlight">
                             <thead>
                             <tr>
+                                <th></th>
                                 <th>Apellido</th>
                                 <th>Nombre</th>
                                 <th>Documento</th>
@@ -50,6 +51,11 @@
                             <tbody>
                             @foreach($taller->users->sortBy('last_name') as $user)
                                 <tr>
+                                    <td>
+                                        <a href="{{ route('users.index') }}" class="btn-floating green tooltipped center btn-small" data-position="top" data-tooltip="{{ implode('<br>', $user->tallers->where('inscription_id', $inscription->id)->pluck('name')->toArray()) }}">
+                                            {{ $user->tallers->where('inscription_id', $inscription->id)->count() }}
+                                        </a>
+                                    </td>
                                     <td>{{$user->last_name}}</td>
                                     <td>{{$user->first_name}}</td>
                                     <td>{{$user->document}}</td>

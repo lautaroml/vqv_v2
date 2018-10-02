@@ -58,7 +58,9 @@ class ResultController extends Controller
      */
     public function show($id)
     {
-        $usuarios = User::all();
+        $taller = Taller::find($id);
+
+        $usuarios = $taller->users;
 
         foreach ($usuarios as $usuario) {
             $usuario->first_name = ucwords($usuario->first_name);
@@ -66,7 +68,6 @@ class ResultController extends Controller
             $usuario->save();
         }
 
-        $taller = Taller::find($id);
         $inscription = $taller->inscription;
 
         return view('admin.results.show', compact('taller', 'inscription'));
@@ -112,7 +113,7 @@ class ResultController extends Controller
 
             $taller =Taller::find($id);
 
-            $usuarios = User::all();
+            $usuarios = $taller->users;
 
             foreach ($usuarios as $usuario) {
                 $usuario->first_name = ucwords($usuario->first_name);

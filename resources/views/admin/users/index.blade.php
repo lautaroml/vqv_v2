@@ -56,13 +56,12 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if($user->elenco)
+                                        @if(\App\Elenco::find($user->elenco) && $user->elenco != 0)
                                             {{\App\Elenco::find($user->elenco)->name}}
                                         @endif
                                     </td>
                                     <td>
                                         <a class="waves-effect waves-light btn-small right" href="{{ route('users.edit', $user->id) }}"><i class="material-icons center">edit</i></a>
-
                                     </td>
                                 </tr>
                             @endforeach
