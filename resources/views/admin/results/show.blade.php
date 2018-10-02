@@ -28,7 +28,7 @@
                     <span class="card-title">{{ $inscription->title }}</span>
                     <hr>
                     <div class="row">
-                        <p>{{ $inscription->description }}</p>
+                        <p>{{ $taller->name }}</p>
                     </div>
 
                     <div class="row">
