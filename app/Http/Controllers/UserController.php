@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         $users = User::paginate(30);
         if ( $request->email ) {
-            $users = User::where('email', like, '%'.trim($request->email).'%');
+            $users = User::where('email', 'like', '%'.trim($request->email).'%');
         }
         return view('admin.users.index', compact('users'));
     }
