@@ -75,10 +75,10 @@
         <div id="other_container" class="form-group{{ $errors->has('other') ? ' has-error' : '' }}" style="display: none">
             <div class="input-field col s6">
                 <i class="material-icons prefix">location_city</i>
-                {!! Form::text('other', null, ['id' => 'other', 'class' => $errors->has('other') ? 'invalid' : '', 'required' => true]) !!}
-                <label for="other" data-error="{{ $errors->has('other') ? $errors->first('other'): '' }}">Escriba la provincia *</label>
-                @if ($errors->has('other'))
-                    <span class="helper-text" data-error="{{ $errors->first('other') }}"></span>
+                {!! Form::text('other_state', null, ['id' => 'other', 'class' => $errors->has('other_state') ? 'invalid' : '', 'required' => true]) !!}
+                <label for="other_state" data-error="{{ $errors->has('other_state') ? $errors->first('other_state'): '' }}">Escriba la provincia *</label>
+                @if ($errors->has('other_state'))
+                    <span class="helper-text" data-error="{{ $errors->first('other_state') }}"></span>
                 @endif
             </div>
         </div>
