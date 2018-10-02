@@ -87,7 +87,7 @@
                 </div>
                 <div class="card-action">
                     <ul class="pagination">
-                        {{ $users->links() }}
+                        {{ $users->appends(request()->except('action'))->links() }}
                     </ul>
                 </div>
             </div>
