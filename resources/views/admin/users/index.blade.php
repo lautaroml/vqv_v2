@@ -17,7 +17,21 @@
             <div class="card">
 
                 <div class="card-content">
-                    <span class="card-title">Usuarios</span>
+                    <span class="card-title">
+                        Usuarios
+                    </span>
+
+                    {!! Form::open(['route' => 'users.index', 'method' => 'get']) !!}
+                        Buscar por email:
+                        <div class="input-field inline">
+                            <input name="email" id="email_inline" type="text" class="validate">
+                            <label for="email_inline">Email</label>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Buscar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    {!! Form::close() !!}
+
                     <hr>
 
                     <div class="row">

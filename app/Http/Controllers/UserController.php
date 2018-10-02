@@ -24,9 +24,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $users = User::paginate(30);
+        if ( $request->email ) {
+            $users = User::where('email', like, '%'.trim($request->email).'%');
+        }
         return view('admin.users.index', compact('users'));
     }
 
