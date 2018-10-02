@@ -24,7 +24,7 @@
                     {!! Form::open(['route' => 'users.index', 'method' => 'get']) !!}
                         Buscar por email:
                         <div class="input-field inline">
-                            <input name="email" id="email_inline" type="text" class="validate">
+                            <input name="email" id="email_inline" type="text" class="validate" value="{{ app('request')->input('email') }}">
                             <label for="email_inline">Email</label>
                         </div>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Buscar
