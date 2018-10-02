@@ -21,4 +21,11 @@
             $("#other").prop('required', false);
         }
     });
+    @if (session('message_error'))
+    M.toast({html: '{{ session('message_error') }}', classes: 'red accent-1'});
+    @endif
+
+    @if (session('message_success'))
+    M.toast({html: '{{ session('message_success') }}', classes: 'teal lighten-2', displayLength: 7000});
+    @endif
 </script>

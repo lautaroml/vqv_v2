@@ -1,10 +1,11 @@
 <div class="card-content">
     {{ csrf_field() }}
     <span class="card-title">
-                        Registro
-                        <span class="right"><small>* (campos obligatorios)</small></span>
-                    </span>
+        Editar Usuario
+        <span class="right"><small>* (campos obligatorios)</small></span>
+    </span>
     <hr>
+    <br>
     <div class="row">
         <div class="input-field col s6">
             <i class="material-icons prefix">person</i>
@@ -34,7 +35,7 @@
         </div>
         <div class="input-field col s6">
             <i class="material-icons prefix">cake</i>
-            {!! Form::text('birthday', \Carbon\Carbon::parse($user->birthday)->format('m/d/Y'), ['id' => 'birthday', 'class' => $errors->has('birthday') ? 'invalid' : '', 'required' => true, 'pattern' => '^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$']) !!}
+            {!! Form::text('birthday', \Carbon\Carbon::parse($user->birthday)->format('d/m/Y'), ['id' => 'birthday', 'class' => $errors->has('birthday') ? 'invalid' : '', 'required' => true, 'pattern' => '^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$']) !!}
             <label for="birthday" data-error="{{ $errors->has('birthday') ? $errors->first('birthday'): '' }}">Fecha de nacimiento (dd/mm/aaaa) *</label>
             @if ($errors->has('birthday'))
                 <span class="helper-text" data-error="{{ $errors->first('birthday') }}"></span>
@@ -71,7 +72,6 @@
         </div>
 
 
-        {{--TODO: Hacer la logica para el siguiente input--}}
         <div id="other_container" class="form-group{{ $errors->has('other') ? ' has-error' : '' }}" style="display: none">
             <div class="input-field col s6">
                 <i class="material-icons prefix">location_city</i>
@@ -81,6 +81,16 @@
                     <span class="helper-text" data-error="{{ $errors->first('other') }}"></span>
                 @endif
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">public</i>
+            {!! Form::select('type',['0' => 'NO', '1' => 'SI'], $user->type, ['required' => true, 'id' => 'type', 'placeholder' => 'Elija una opción']) !!}
+            <label>Administrador *</label>
+            @if ($errors->has('type'))
+                <span class="helper-text" data-error="{{ $errors->first('type') }}"></span>
+            @endif
         </div>
     </div>
 </div>

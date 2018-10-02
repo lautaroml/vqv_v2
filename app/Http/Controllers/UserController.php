@@ -7,6 +7,7 @@ use App\Elenco;
 use App\Settings;
 use App\State;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -69,7 +70,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find(1);
+        $user = User::find($id);
         $elencos = Elenco::all()->pluck('name', 'id')->toArray();
         $countries = Country::all()->pluck('name', 'id')->toArray();
         $states = State::all()->pluck('name', 'id')->toArray();
@@ -91,7 +92,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->document = $request->document;
+        $user->birthday = Carbon::createFromFormat('d/m/Y',$request->birthday);
+        $user->country_id = $request->country;
+        $user->state_id = $request->state;
+        $user->email = $request->email;
+        $user->other_state = $request->other;
+        $user->type = $request->type;
+        $user->save();
+
+        return redirect()->back()->with([
+            'message_success' => 'Usuario editado correctamente!'
+        ]);
     }
 
     /**
@@ -102,6 +118,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('users.index')->with([
+            'message_success' => 'Usuario eliminado correctamente!'
+        ]);
     }
 }
