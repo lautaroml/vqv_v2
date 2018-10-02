@@ -72,7 +72,9 @@
 
                 </div>
                 <div class="card-action">
-
+                    <ul class="pagination">
+                        {{ $users->links() }}
+                    </ul>
                 </div>
             </div>
         </div>
