@@ -17,8 +17,9 @@
                     <span class="card-title">
                         Inscripciones
                         @auth()
-                            @if(auth()->user()->type === 1)
+                            @if(intval(auth()->user()->type) === 1)
                                 <a class="waves-effect waves-light btn-small" href="{{ route('inscriptions.index') }}"><i class="material-icons center">edit</i></a>
+                                <a class="right waves-effect waves-light btn-small" href="{{ route('elencos.inscripcion.show') }}">Elencos Inscriptos</a>
                             @endif
                         @endauth
 

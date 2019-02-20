@@ -10,7 +10,8 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.7.0",
-        "tightenco/ziggy": "v0.6.8.1"
+        "tightenco/ziggy": "v0.6.8.1",
+        "wetransfer/php-sdk": "^0.3.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

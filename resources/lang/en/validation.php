@@ -93,7 +93,7 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
+    'required'             => 'El campo :attribute es obligatorio.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -141,6 +141,23 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'group_name' => 'Nombre del Grupo',
+        'location' => 'Localidad o Barrio',
+        'group_history' => 'Historia del Grupo',
+        'sinopsis' => 'Sinopsis de la obra e historia del grupo',
+        'ficha_de_inscripcion' => 'ficha de inscripción',
+        'obra_title' => 'Título de la Obra',
+        'obra_duration' => 'Duración de la Obra',
+        'sinopsis_2' => 'Sinopsis',
+        'director' => 'Director',
+        'autor' => 'Autor',
+        'video_duration' => 'Duración del Video',
+        'video_link' => 'Link del Video',
+        'photos_link' => 'Link de las Fotos',
+        'planta_de_luces' => 'Planta de luces',
+        'sonido' => 'Sonido',
+        'proyector' => 'Proyector'
+    ],
 
 ];

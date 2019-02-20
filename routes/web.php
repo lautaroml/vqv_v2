@@ -15,6 +15,12 @@
     return view('welcome');
 });*/
 
+Route::get('elencos_inscripcion', 'ElencoController@formShow')->name('elencos.inscripcion');
+Route::get('elencos_inscripcion/show', 'ElencoController@formView')->name('elencos.inscripcion.show');
+Route::get('elencos_inscripcion_success', function (){
+    return view('elencos.success');
+})->name('elencos.inscripcion.finish');
+Route::post('elencos_inscripcion', 'ElencoController@formRegister')->name('elencos.inscripcion.register');
 
 Auth::routes();
 
@@ -43,4 +49,6 @@ Route::get('dashboard', function(){
 
 Route::resource('results', 'ResultController');
 Route::get('results/download/{taller}', 'ResultController@download')->name('results.download');
+
+
 
