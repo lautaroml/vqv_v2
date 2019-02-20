@@ -91,7 +91,7 @@
 
                                 <blockquote>
                                     <strong>Link del video: </strong>
-                                    {{ $elenco->video_link }}
+                                    <a href="{{ $elenco->video_link }}">{{ $elenco->video_link }}</a>
                                 </blockquote>
 
                                 <blockquote>
@@ -101,7 +101,7 @@
 
                                 <blockquote>
                                     <strong>Link de las fotos: </strong>
-                                    {{ $elenco->photos_link }}
+                                    <a href="{{ $elenco->photos_link }}">{{ $elenco->photos_link }}</a>
                                 </blockquote>
 
 
