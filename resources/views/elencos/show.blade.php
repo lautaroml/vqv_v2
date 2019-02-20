@@ -18,11 +18,14 @@
 
 
             <div class="row">
+                <div class="col s12 m12">
+                    <span class="card-title">Elencos inscriptos:</span>
+                    <hr>
+                </div>
 
                 @foreach($elencos_form as $elenco)
                     <div class="col s12 m12">
-                        <span class="card-title">Elencos inscriptos:</span>
-                        <hr>
+
                         <div class="card blue-grey darken-1">
                             <div class="card-content white-text">
 
