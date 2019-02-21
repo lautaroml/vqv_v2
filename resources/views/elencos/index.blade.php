@@ -271,6 +271,9 @@
                 },
                 error: function(uno, dos, tres,c){
                     console.log(uno,dos,tres,c)
+                },
+                chunksUploaded: function(uno){
+                    console.log(uno)
                 }
             }
         );

@@ -151,7 +151,8 @@ class ElencoController extends Controller
 
     public function dropVideo(Request $request)
     {
-        $path = 'storage/' . $request->file_v->store('videos');
+        $extension = $request->file_v->extension();
+        $path = 'storage/' . $request->file_v->storeAs('videos', '_'.time() . '.' .$extension);
         return response()->json(['message' => 'faa'], 200);
     }
 }
