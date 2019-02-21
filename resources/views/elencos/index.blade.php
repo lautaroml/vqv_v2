@@ -261,6 +261,8 @@
     <script>
         $("#dropzone_video").dropzone(
             {
+                parallelUploads: 1,
+                chunking: true,
                 paramName: "file_v", // The name that will be used to transfer the file
                 maxFilesize: 150, // MB
                 success: function (file, done) {
