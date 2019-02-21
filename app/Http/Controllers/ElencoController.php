@@ -11,8 +11,8 @@ class ElencoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',['except' => ['formShow', 'formRegister']]);
-        $this->middleware('isAdmin',['except' => ['formShow', 'formRegister']]);
+        $this->middleware('auth');
+        $this->middleware('isAdmin')->except(['formShow', 'formRegister', 'dropVideo', 'dropImage']);
     }
 
     public function index()
@@ -141,5 +141,17 @@ class ElencoController extends Controller
         $elencos_form = ElencoForm::paginate(15);
 
         return view('elencos.show', compact('elencos_form'));
+    }
+
+    public function dropImage(Request $request)
+    {
+        $path = 'storage/' . $request->file_i->store('image');
+        return response()->json(['message' => 'faa'], 200);
+    }
+
+    public function dropVideo(Request $request)
+    {
+        $path = 'storage/' . $request->file_v->store('videos');
+        return response()->json(['message' => 'faa'], 200);
     }
 }

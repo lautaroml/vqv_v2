@@ -7,6 +7,7 @@
             margin-top: 40px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" />
 @endsection
 
 @section('content')
@@ -201,10 +202,14 @@
 
 
 
-
-
 <!-- Modal Structure -->
 <div id="modal1" class="modal modal-fixed-footer">
+
+    <form method="post" action="{{ route('drop.video') }}" enctype="multipart/form-data"
+          class="dropzone" id="dropzone_video">
+        @csrf
+    </form>
+
     <div class="modal-content">
         <h4>Como subir tu video:</h4>
         <p>1) Abre una ventana en tu navegador y dirigete a: https://ydray.com</p>
@@ -215,13 +220,18 @@
 
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
     </div>
 </div>
 
 
 <!-- Modal Structure -->
 <div id="modal2" class="modal modal-fixed-footer">
+    <form method="post" action="{{ route('drop.image') }}" enctype="multipart/form-data"
+          class="dropzone" id="dropzone_img">
+        @csrf
+    </form>
+
     <div class="modal-content">
         <h4>Como subir tus fotos:</h4>
         <p>1) Abre una ventana en tu navegador y dirigete a: https://ydray.com</p>
@@ -232,7 +242,7 @@
 
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
     </div>
 </div>
 
@@ -245,5 +255,36 @@
         $(document).ready(function(){
             $('select').formSelect();
         });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
+    <script>
+        $("#dropzone_video").dropzone(
+            {
+                paramName: "file_v", // The name that will be used to transfer the file
+                maxFilesize: 2, // MB
+                success: function (file, done) {
+                    alert('listo');
+                    console.log(file, done);
+                },
+                error: function(uno, dos, tres,c){
+                    console.log(uno,dos,tres,c)
+                }
+            }
+        );
+
+        $("#dropzone_img").dropzone(
+            {
+                paramName: "file_i", // The name that will be used to transfer the file
+                maxFilesize: 2, // MB
+                success: function (file, done) {
+                    alert('listo');
+                    console.log(file, done);
+                },
+                error: function(uno, dos, tres,c){
+                    console.log(uno,dos,tres,c)
+                }
+            }
+        );
     </script>
 @endsection

@@ -15,12 +15,15 @@
     return view('welcome');
 });*/
 
+Route::post('drop-image', 'ElencoController@dropImage')->name('drop.image');
+Route::post('drop-video', 'ElencoController@dropVideo')->name('drop.video');
+
 Route::get('elencos_inscripcion', 'ElencoController@formShow')->name('elencos.inscripcion');
-Route::get('elencos_inscripcion/show', 'ElencoController@formView')->name('elencos.inscripcion.show');
+Route::post('elencos_inscripcion', 'ElencoController@formRegister')->name('elencos.inscripcion.register');
 Route::get('elencos_inscripcion_success', function (){
     return view('elencos.success');
 })->name('elencos.inscripcion.finish');
-Route::post('elencos_inscripcion', 'ElencoController@formRegister')->name('elencos.inscripcion.register');
+Route::get('elencos_inscripcion/show', 'ElencoController@formView')->name('elencos.inscripcion.show');
 
 Auth::routes();
 
