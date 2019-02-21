@@ -262,7 +262,7 @@
         $("#dropzone_video").dropzone(
             {
                 paramName: "file_v", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
+                maxFilesize: 150, // MB
                 success: function (file, done) {
                     alert('listo');
                     console.log(file, done);
@@ -276,7 +276,7 @@
         $("#dropzone_img").dropzone(
             {
                 paramName: "file_i", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
+                maxFilesize: 150, // MB
                 success: function (file, done) {
                     alert('listo');
                     console.log(file, done);
