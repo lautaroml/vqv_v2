@@ -18,7 +18,6 @@ class CreateElencoFormsTable extends Migration
             $table->text('group_name');
             $table->char('location', 255);
             $table->text('group_history');
-            $table->text('sinopsis');
             $table->text('ficha_de_inscripcion');
             $table->text('obra_title');
             $table->char('obra_duration',255);

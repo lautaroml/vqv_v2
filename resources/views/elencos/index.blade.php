@@ -49,15 +49,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="sinopsis" class="materialize-textarea {{ $errors->has('sinopsis') ? 'invalid' : '' }}" name="sinopsis" required>{{ old('sinopsis') }}</textarea>
-                            <label for="sinopsis" data-error="{{ $errors->has('sinopsis') ? $errors->first('sinopsis'): '' }}">Sinopsis de la obra e historia del grupo resumida en 5 renglones</label>
-                            @if ($errors->has('sinopsis'))
-                                <span class="helper-text" data-error="{{ $errors->first('sinopsis') }}"></span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Ficha de inscripción</span>
@@ -105,14 +96,14 @@
                     <div class="row">
                         <div class="input-field col s6">
                             <input id="director" type="text" name="director" value="{{ old('director') }}" class="{{ $errors->has('director') ? 'invalid' : '' }}" required>
-                            <label for="director" data-error="{{ $errors->has('director') ? $errors->first('director'): '' }}">Director: Incluir datos del director (si hubiese)</label>
+                            <label for="director" data-error="{{ $errors->has('director') ? $errors->first('director'): '' }}">Director: Incluir datos del director</label>
                             @if ($errors->has('director'))
                                 <span class="helper-text" data-error="{{ $errors->first('director') }}"></span>
                             @endif
                         </div>
                         <div class="input-field col s6">
                             <input id="autor" type="text" name="autor" value="{{ old('autor') }}" class="{{ $errors->has('autor') ? 'invalid' : '' }}" required>
-                            <label for="autor" data-error="{{ $errors->has('autor') ? $errors->first('autor'): '' }}">Autor: Incluir datos del autor (si hubiese)</label>
+                            <label for="autor" data-error="{{ $errors->has('autor') ? $errors->first('autor'): '' }}">Autor: Incluir datos del autor</label>
                             @if ($errors->has('autor'))
                                 <span class="helper-text" data-error="{{ $errors->first('autor') }}"></span>
                             @endif
@@ -120,28 +111,28 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <a class="waves-effect waves-light  modal-trigger" href="#modal1">Como subir el video?</a>
+                            <a class="waves-effect waves-light  modal-trigger" href="#modal1">Para saber como subir tu video, haz click aquí</a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="video_duration" type="text" name="video_duration" value="{{ old('video_duration') }}" class="{{ $errors->has('video_duration') ? 'invalid' : '' }}" required>
-                            <label for="video_duration" data-error="{{ $errors->has('video_duration') ? $errors->first('video_duration'): '' }}">Duración del VIDEO (mínimo 20’)</label>
-                            @if ($errors->has('video_duration'))
-                                <span class="helper-text" data-error="{{ $errors->first('video_duration') }}"></span>
+                            <input id="video_link" type="text" name="video_link" value="{{ old('video_link') }}" class="{{ $errors->has('video_link') ? 'invalid' : '' }}" required>
+                            <label for="video_link" data-error="{{ $errors->has('video_link') ? $errors->first('video_link'): '' }}">Link del Video</label>
+                            @if ($errors->has('video_link'))
+                                <span class="helper-text" data-error="{{ $errors->first('video_link') }}"></span>
                             @endif
                         </div>
                         <div class="input-field col s6">
-                            <input id="video_link" type="text" name="video_link" value="{{ old('video_link') }}" class="{{ $errors->has('video_link') ? 'invalid' : '' }}" required>
-                            <label for="video_link" data-error="{{ $errors->has('video_link') ? $errors->first('video_link'): '' }}">Link del VIDEO (mínimo 20’)</label>
-                            @if ($errors->has('video_link'))
-                                <span class="helper-text" data-error="{{ $errors->first('video_link') }}"></span>
+                            <input id="video_duration" type="text" name="video_duration" value="{{ old('video_duration') }}" class="{{ $errors->has('video_duration') ? 'invalid' : '' }}" required>
+                            <label for="video_duration" data-error="{{ $errors->has('video_duration') ? $errors->first('video_duration'): '' }}">Duración del Video (mínimo 20’)</label>
+                            @if ($errors->has('video_duration'))
+                                <span class="helper-text" data-error="{{ $errors->first('video_duration') }}"></span>
                             @endif
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <a class="waves-effect waves-light  modal-trigger" href="#modal2">Como subir las fotos?</a>
+                            <a class="waves-effect waves-light  modal-trigger" href="#modal2">Para saber como subir tus fotos, haz click aquí</a>
                         </div>
                     </div>
                     <div class="row">
@@ -187,6 +178,116 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="otros_requerimientos" class="materialize-textarea {{ $errors->has('otros_requerimientos') ? 'invalid' : '' }}" name="otros_requerimientos" required>{{ old('otros_requerimientos') }}</textarea>
+                            <label for="otros_requerimientos" data-error="{{ $errors->has('otros_requerimientos') ? $errors->first('otros_requerimientos'): '' }}">Otros requerimientos</label>
+                            @if ($errors->has('otros_requerimientos'))
+                                <span class="helper-text" data-error="{{ $errors->first('otros_requerimientos') }}"></span>
+                            @endif
+                        </div>
+                    </div>
+
+
+
+                    <span class="card-title">
+                        Otros
+                    </span>
+                    <hr>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="adulto_responsable" class="materialize-textarea {{ $errors->has('adulto_responsable') ? 'invalid' : '' }}" name="adulto_responsable" required>{{ old('adulto_responsable') }}</textarea>
+                            <label for="adulto_responsable" data-error="{{ $errors->has('adulto_responsable') ? $errors->first('adulto_responsable'): '' }}">Nombre del adulto responsable</label>
+                            @if ($errors->has('adulto_responsable'))
+                                <span class="helper-text" data-error="{{ $errors->first('adulto_responsable') }}"></span>
+                            @endif
+                        </div>
+                        <div class="input-field col s6">
+                            <textarea id="adulto_responsable_dni" class="materialize-textarea {{ $errors->has('adulto_responsable_dni') ? 'invalid' : '' }}" name="adulto_responsable_dni" required>{{ old('adulto_responsable_dni') }}</textarea>
+                            <label for="adulto_responsable_dni" data-error="{{ $errors->has('adulto_responsable_dni') ? $errors->first('adulto_responsable_dni'): '' }}">DNI del adulto responsable</label>
+                            @if ($errors->has('adulto_responsable_dni'))
+                                <span class="helper-text" data-error="{{ $errors->first('adulto_responsable_dni') }}"></span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="adulto_responsable_relacion" class="materialize-textarea {{ $errors->has('adulto_responsable_relacion') ? 'invalid' : '' }}" name="adulto_responsable_relacion" required>{{ old('adulto_responsable_relacion') }}</textarea>
+                            <label for="adulto_responsable_relacion" data-error="{{ $errors->has('adulto_responsable_relacion') ? $errors->first('adulto_responsable_relacion'): '' }}">Relación del adulto responsable</label>
+                            @if ($errors->has('adulto_responsable_relacion'))
+                                <span class="helper-text" data-error="{{ $errors->first('adulto_responsable_relacion') }}"></span>
+                            @endif
+                        </div>
+                        <div class="input-field col s6">
+                            <textarea id="adulto_responsable_telefono" class="materialize-textarea {{ $errors->has('adulto_responsable_telefono') ? 'invalid' : '' }}" name="adulto_responsable_telefono" required>{{ old('adulto_responsable_telefono') }}</textarea>
+                            <label for="adulto_responsable_telefono" data-error="{{ $errors->has('adulto_responsable_telefono') ? $errors->first('adulto_responsable_telefono'): '' }}">Teléfono del adulto responsable</label>
+                            @if ($errors->has('adulto_responsable_telefono'))
+                                <span class="helper-text" data-error="{{ $errors->first('adulto_responsable_telefono') }}"></span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="adulto_responsable_email" class="materialize-textarea {{ $errors->has('adulto_responsable_email') ? 'invalid' : '' }}" name="adulto_responsable_email" required>{{ old('adulto_responsable_email') }}</textarea>
+                            <label for="adulto_responsable_email" data-error="{{ $errors->has('adulto_responsable_email') ? $errors->first('adulto_responsable_email'): '' }}">Email del adulto responsable</label>
+                            @if ($errors->has('adulto_responsable_email'))
+                                <span class="helper-text" data-error="{{ $errors->first('adulto_responsable_email') }}"></span>
+                            @endif
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="lo_que_mas_me_gusta" class="materialize-textarea {{ $errors->has('lo_que_mas_me_gusta') ? 'invalid' : '' }}" name="lo_que_mas_me_gusta" required>{{ old('lo_que_mas_me_gusta') }}</textarea>
+                            <label for="lo_que_mas_me_gusta" data-error="{{ $errors->has('lo_que_mas_me_gusta') ? $errors->first('lo_que_mas_me_gusta'): '' }}">¿Qué es lo que más me gusta del espectáculo?</label>
+                            @if ($errors->has('lo_que_mas_me_gusta'))
+                                <span class="helper-text" data-error="{{ $errors->first('lo_que_mas_me_gusta') }}"></span>
+                            @endif
+                        </div>
+                        <div class="input-field col s6">
+                            <textarea id="momento_especial" class="materialize-textarea {{ $errors->has('momento_especial') ? 'invalid' : '' }}" name="momento_especial" required>{{ old('momento_especial') }}</textarea>
+                            <label for="momento_especial" data-error="{{ $errors->has('momento_especial') ? $errors->first('momento_especial'): '' }}">Momento especial del texto dramático</label>
+                            @if ($errors->has('momento_especial'))
+                                <span class="helper-text" data-error="{{ $errors->first('momento_especial') }}"></span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <textarea id="como_se_enteraron" class="materialize-textarea {{ $errors->has('como_se_enteraron') ? 'invalid' : '' }}" name="como_se_enteraron" required>{{ old('como_se_enteraron') }}</textarea>
+                            <label for="como_se_enteraron" data-error="{{ $errors->has('como_se_enteraron') ? $errors->first('como_se_enteraron'): '' }}">¿Cómo se enteraron del festival?</label>
+                            @if ($errors->has('como_se_enteraron'))
+                                <span class="helper-text" data-error="{{ $errors->first('como_se_enteraron') }}"></span>
+                            @endif
+                        </div>
+                        <div class="input-field col s6">
+                            <textarea id="estrategia_de_viaje" class="materialize-textarea {{ $errors->has('estrategia_de_viaje') ? 'invalid' : '' }}" name="estrategia_de_viaje" required>{{ old('estrategia_de_viaje') }}</textarea>
+                            <label for="estrategia_de_viaje" data-error="{{ $errors->has('estrategia_de_viaje') ? $errors->first('estrategia_de_viaje'): '' }}">Estrategias previstas para concretar el viaje</label>
+                            @if ($errors->has('estrategia_de_viaje'))
+                                <span class="helper-text" data-error="{{ $errors->first('estrategia_de_viaje') }}"></span>
+                            @endif
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row center-align">
+
+                        <p class="">
+                            <label>
+                                {!! Form::checkbox('bases', 1, null, ['required' => true]) !!}
+                                <span>Acepto las bases y condiciones</span>
+                            </label>
+                        </p>
+
+                    </div>
 
 
                 </div>
