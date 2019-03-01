@@ -13,7 +13,7 @@ class ElencoController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('isAdmin',['except' => ['formShow', 'formRegister']]);
+        $this->middleware('isAdmin',['except' => ['formShow', 'formRegister', 'formEdit', 'formUpdate']]);
     }
 
     public function index()
