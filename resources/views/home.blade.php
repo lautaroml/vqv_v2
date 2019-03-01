@@ -34,8 +34,16 @@
                                 @endforeach
                             </div>
                         @else
-                            <p>No hay inscripciones abiertas por el momento.</p>
+                            <p>No hay inscripciones a talleres por el momento.</p>
                         @endif
+                            <br>
+
+                            @if($elenco)
+                                <p>Para editar tu inscripción del elenco, hace click <a href="{{ url('/elencos_inscripcion/edit') }}">aqui</a>.</p>
+                            @else
+                                <p>Para inscribir un elenco, hace click <a href="{{ url('/elencos_inscripcion') }}">aqui</a>.</p>
+                            @endif
+
                     </div>
                 </div>
             </div>

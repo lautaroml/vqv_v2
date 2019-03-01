@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ElencoForm;
 use App\Inscription;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,9 @@ class HomeController extends Controller
     public function index()
     {
         $inscriptions = Inscription::where('status', 1)->get();
-        return view('home', compact('inscriptions'));
+
+        $elenco = ElencoForm::where('user_id', auth()->user()->id)->first();
+
+        return view('home', compact('inscriptions', 'elenco'));
     }
 }

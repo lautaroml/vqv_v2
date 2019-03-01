@@ -16,16 +16,17 @@ class AddColumnElencoFormTable extends Migration
         Schema::table('elenco_forms', function($table)
         {
             $table->text('otros_requerimientos')->nullable();
-            $table->text('adulto_responsable')->nullable();
-            $table->text('adulto_responsable_dni')->nullable();
-            $table->text('adulto_responsable_relacion')->nullable();
-            $table->text('adulto_responsable_telefono')->nullable();
-            $table->text('adulto_responsable_email')->nullable();
+            $table->text('adulto_responsable')->default('');
+            $table->text('adulto_responsable_dni')->default('');
+            $table->text('adulto_responsable_relacion')->default('');
+            $table->text('adulto_responsable_telefono')->default('');
+            $table->text('adulto_responsable_email')->default('');
             $table->text('lo_que_mas_me_gusta')->nullable();
             $table->text('momento_especial')->nullable();
             $table->text('como_se_enteraron')->nullable();
             $table->text('estrategia_de_viaje')->nullable();
             $table->boolean('bases')->default(0)->nullable();
+            $table->unsignedInteger('user_id')->nullable();;
         });
     }
 

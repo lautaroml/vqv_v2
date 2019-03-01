@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         $this->notify(new MailResetPasswordNotification($token));
     }
+
+    public function elenco()
+    {
+        return $this->hasOne('App\ElencoForm', null, 'user_id');
+    }
 }
